@@ -1,16 +1,22 @@
 import React from "react";
+import './style.css';
 
 function ResultList(props) {
-  return (
-    <ul className="list-group">
-    
-      {props.results.map(i => (
-        <li className="list-group-item" key={i.id}>
-          <p>{i.headline}</p>
-        </li>
-      ))}
-    </ul>
-  );
+    console.log("Hello", props)
+    return (
+        <div className="container">
+        <h2>Headlines</h2>
+            <ul className="list-group">
+                {props.results.map(i => (
+                    <li className="list-group-item" key={i.id}>
+                     <a href={i.web_url}>{i.abstract}</a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+
+    );
 }
 
 export default ResultList;

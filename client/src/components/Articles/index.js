@@ -4,30 +4,36 @@ import ResultList from "../ResultList"
 
 class Articles extends React.Component {
     state = {
-    result: {},
-    search: ""
+        result: [],
+        search: ""
     }
 
-componentDidMount() {
-    this.searchArticles("CoronaVirus");
     
-  }
 
-  searchArticles = query => {
-    API.search(query)
-      .then(res => this.setState({ result: res.data.response.docs }))
-      .catch(err => console.log(err));
-  };
+    searchArticles = query => {
+        API.search(query)
+            .then(res => {
+                console.log(res.data.response.docs)
+                this.setState({ result: [...res.data.response.docs] })
+            })
+            .catch(err => console.log(err));
+    };
+
+    componentDidMount() {
+        this.searchArticles("CoronaVirus");
+
+    }
 
 
-  render () {
-    console.log(this.state.result)
-    return (
-        <div className="container">
-            <ResultList results={this.state.result}/>
-        </div>
-    )
-}
+    render() {
+        console.log("Good afternoon", this.state.result)
+        
+        return (
+            <div className="container">
+                <ResultList results={this.state.result} />
+            </div>
+        )
+    }
 
 }
 
