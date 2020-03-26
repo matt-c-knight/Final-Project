@@ -4,7 +4,7 @@ import './style.css';
 function ResultList(props) {
     console.log("Hello", props)
     return (
-        <div className="container">
+        <div className="wrapper">
         <h2>Headlines</h2>
             <ul className="list-group">
                 {props.results.map(i => (
