@@ -8,7 +8,7 @@ function ResultList(props) {
         <h2>Headlines</h2>
             <ul className="list-group">
                 {props.results.map(i => (
-                    <li className="list-group-item" key={i.id}>
+                    <li className="list-group-item" key={i.name}>
                      <a href={i.web_url}>{i.abstract}</a>
                     </li>
                 ))}
