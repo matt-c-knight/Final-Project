@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
 import {ContactList, ContactListItem} from "../components/ContactList";
-import Input from "../components/Input";
-import Button from "../components/Button";
+// import Input from "../components/Input";
+// import Button from "../components/Button";
 
 
 function Contacts() {
@@ -33,18 +33,7 @@ function Contacts() {
 
     return (
         <div>
-            {/* <Input
-                name="ContactSearch"
-                value={contactSearch}
-                onChange={handleInputChange}
-                placeholder="Search For a Contact"
-            />
-            <Button
-                onClick={handleFormSubmit}
-                type="success"
-                className="input-lg">
-                Search
-            </Button> */}
+           
             <ContactList>
                 {contacts.map(contact => {
                   return (

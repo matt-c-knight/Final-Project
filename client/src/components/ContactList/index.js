@@ -5,13 +5,14 @@ export function ContactList({ children }) {
   }
 
 export function ContactListItem({
+    key,
     name,
     phone,
     email
     }) {
     return (
         <div className="container">
-            <div className="row">
+            <div className="row" data-key={key}>
                 <div className="col-md-4">
                     <h4>{name}</h4>
                 </div>

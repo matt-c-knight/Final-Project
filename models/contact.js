@@ -1,13 +1,10 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const Schema = mongoose.Schema;
 
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/contacts"
-);
 
-const contactSchema = new mongoose.Schema({
+
+const contactSchema = new Schema({
   name: {
     type: String,
     required: true

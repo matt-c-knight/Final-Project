@@ -19,9 +19,7 @@ const contactSeed = [
 
 
 
-    db.Contact
-    .remove({})
-    .then(() => db.Contact.collection.insertMany(contactSeed))
+    db.Contact.collection.insertMany(contactSeed)
     .then(data => {
       console.log(data.result.n + " records inserted!");
       process.exit(0);
