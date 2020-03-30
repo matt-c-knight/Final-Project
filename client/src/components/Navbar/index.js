@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
     return (
-        <div className="container">
+        <div className="nav">
             <ul>
+                <li className="nav"><Link to="/">Home</Link></li>
+                <li className="nav"><Link to="/articles">Headlines</Link></li>
                 <li className="nav"><Link to="/contacts">Contacts</Link></li>
-                <li className="nav"><Link to="/">Will</Link></li>
+                <li className="nav"><Link to="/will">Will</Link></li>
             </ul>
         </div>
     )

@@ -3,7 +3,7 @@ import './style.css';
 
 function Header () {
     return (
-        <div className="container">
+        <div className="header">
             <h1>Coronavirus Emergency Preparedness Site</h1>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
-import {ContactList, ContactListItem} from "../components/ContactList";
+import ContactList from "../components/ContactList";
 // import Input from "../components/Input";
 // import Button from "../components/Button";
 
@@ -26,29 +26,22 @@ function Contacts() {
 
         function loadContacts() {
             API.getContacts()
-                .then(res => setContacts(res.data))
+                .then(res => 
+                    setContacts(res.data)
+                     )
                 .catch(err => console.log(err));
         }
+        function deleteContact(id) {
+            API.deleteContact(id)
+              .then(res => loadContacts())
+              .catch(err => console.log(err));
+          }
     
 
     return (
         <div>
-           
-            <ContactList>
-                {contacts.map(contact => {
-                  return (
-                    <ContactListItem
-                      key={contact._id}
-                      name={contact.name}
-                      phone={contact.phone}
-                      email={contact.email}
-                      
-                    />
-                  );
-                })}
-              </ContactList>
-
-        </div>
+                <ContactList contacts={contacts} deleteContact={deleteContact}/>
+            </div>
 
 
     )

@@ -17,5 +17,15 @@ export default {
   },
   saveContact: function(contactData) {
     return axios.post("/api/contacts", contactData);
+  },
+  saveUser: function(userData) {
+    return axios.post("/api/users", userData)
+  },
+  getUser: function(id) {
+    return axios.get("/api/contacts" + id);
+  },
+  getUsers: function() {
+    return axios.get("/api/users");
   }
+
 };

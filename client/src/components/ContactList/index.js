@@ -1,28 +1,27 @@
 import React from "react";
+import DeleteBtn from "../DeleteBtn";
+// import './style.css';
 
-export function ContactList({ children }) {
-    return <ul className="list-group">{children}</ul>;
-  }
-
-export function ContactListItem({
-    key,
-    name,
-    phone,
-    email
-    }) {
+function ContactList(props) {
+    console.log("Hello", props)
     return (
-        <div className="container">
-            <div className="row" data-key={key}>
-                <div className="col-md-4">
-                    <h4>{name}</h4>
-                </div>
-                <div className="col-md-4">
-                    <p>{phone}</p>
-                </div>
-                <div className="col-md-4">
-                    <p>{email}</p>
-                </div>
-            </div>
+        <div className="wrapper">
+        
+            <ul className="list-group">
+                {props.contacts.map(i => (
+                    <li className="list-group-item" key={i._id}>
+                    <DeleteBtn onClick={() => props.deleteContact(i._id)} />
+                     <h5>{i.name}</h5>
+                     <p>{i.phone}</p>
+                     <p>{i.email}</p>
+                    
+                   </li>
+                ))}
+            </ul>
         </div>
-    )
-    };
+
+
+    );
+}
+
+export default ContactList;

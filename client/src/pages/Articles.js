@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import API from "../utils/API";
-import ResultList from "../components/List"
+import ResultList from "../components/ResultList"
 
 class Articles extends React.Component {
     state = {

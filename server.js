@@ -12,11 +12,17 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populate", { useNewUrlParser: true });
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/contacts",
   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
+
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/users",
+  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
+);
+
 
 app.use(routes);
 
