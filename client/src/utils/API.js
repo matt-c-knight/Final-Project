@@ -2,15 +2,16 @@ import axios from "axios";
 const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=";
 const APIKEY = "&api-key=tnkdGL4fGMB8GtdLgnEQu9zXtznihNGA";
 
+
 export default {
   search: function(query) {
     return axios.get(BASEURL + query + APIKEY);
   },
-  getContacts: function() {
-    return axios.get("/api/contacts");
+  getContacts: function(userId) {
+    return axios.get("/api/users/" + userId + "/contacts");
   },
   getContact: function(obj) {
-    return axios.get("/api/contact/get", obj);
+    return axios.get("/api/contacts/get", obj);
   },
   deleteContact: function(id) {
     return axios.delete("/api/contacts/" + id);

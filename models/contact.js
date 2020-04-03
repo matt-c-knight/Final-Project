@@ -5,10 +5,7 @@ const Schema = mongoose.Schema;
 
 
 const contactSchema = new Schema({
-  //   userid: {
-  //   type: String,
-  //   postedBy: {type: Schema.Types.ObjectId, ref: 'User'}
-  // },
+  
   name: {
     type: String,
     required: true
@@ -23,7 +20,11 @@ const contactSchema = new Schema({
     type: String,
     default: "",
     unique: true
-  }
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'User'
+}
 
   
 });

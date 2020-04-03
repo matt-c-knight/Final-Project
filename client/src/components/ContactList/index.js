@@ -9,7 +9,7 @@ function ContactList(props) {
         
             <ul className="list-group">
                 {props.contacts.map(i => (
-                    <li className="list-group-item" key={i._id}>
+                    <li className="list-group-item" key={i.user}>
                     
                      <h5>{i.name}</h5>
                      <p>{i.phone}</p>

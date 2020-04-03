@@ -5,8 +5,9 @@ const contactsController = require("../../controllers/contactsController");
 router.route("/")
   .get(contactsController.findAll)
   .post(contactsController.create);
-  router.route("/get")
-  .post(contactsController.findOne);
+  
+  // router.route("/get")
+  // .post(contactsController.findOne);
 // Matches with "/api/books/:id"
 router
   .route("/:id")

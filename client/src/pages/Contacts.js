@@ -11,11 +11,11 @@ function Contacts(props) {
     const [formObject, setFormObject] = useState({
         name: "",
         phone: "",
-        email: ""
+        email: "",
+        
       })
-    // const { userid } = useContext(UserContext);
-    // console.log(contacts)
-    // const [contactSearch, setContactSearch] = useState("");
+    const { userid } = useContext(UserContext);
+
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -28,7 +28,9 @@ function Contacts(props) {
         API.saveContact({
             name: formObject.name,
             phone: formObject.phone,
-            email: formObject.email
+            email: formObject.email,
+            user: userid
+
         })   .then(() => setFormObject({
             name: "",
             phone: "",
@@ -46,10 +48,11 @@ function Contacts(props) {
       
 
         function loadContacts() {
-            API.getContacts()
-                .then(res => 
+            API.getContacts(userid)
+                .then(res => {
+                    console.log('res', res);
                     setContacts(res.data)
-                     )
+                })
                 .catch(err => console.log(err));
         }
         function deleteContact(id) {
