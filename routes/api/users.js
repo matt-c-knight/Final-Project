@@ -5,7 +5,8 @@ const usersController = require("../../controllers/usersController");
 router.route("/")
   .get(usersController.findAll)
   .post(usersController.create);
-
+router.route("/login")
+  .post(usersController.findOne);
 // Matches with "/api/books/:id"
 router
   .route("/:id")

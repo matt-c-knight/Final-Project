@@ -15,6 +15,16 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findOne: function (req, res) {
+    console.log("Success", req.body)
+    db.Contact
+      .findOne({userid: req.body.userid})
+      .then(dbModel => res.send(dbModel))
+      .catch(err => {
+        console.log("login error", err)
+        res.status(422).json(err)
+      });
+  },
   create: function(req, res) {
     db.Contact
       .create(req.body)

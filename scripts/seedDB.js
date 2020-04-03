@@ -3,25 +3,21 @@ const db = require("../models");
 
 
 
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/contacts"
-// );
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/contacts"
+);
 
 // mongoose.connect(
 //   process.env.MONGODB_URI || "mongodb://localhost/users"
 // );
-
 const contactSeed = [
-    {
-         
-    name: "John Smith",
-    phone: "512-444-3223",
-    email: "jsmith@gmail.com"},
-    {
-    
-    name: "Sally Jones",
-    phone: "512-333-2567",
-    email: "sjones@aol.com"}];
+  {
+  // userid: "5e851a13dc9d502a12400584",
+  name: "John Smith",
+  phone: "512-444-3223",
+  email: "jsmith@gmail.com"}
+  
+  ];
 
     // const userSeed = [
     //   {

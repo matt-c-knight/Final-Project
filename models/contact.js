@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 
 
 const contactSchema = new Schema({
-  // username: {
+  //   userid: {
   //   type: String,
-  //   postedBy: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+  //   postedBy: {type: Schema.Types.ObjectId, ref: 'User'}
   // },
   name: {
     type: String,
@@ -23,11 +23,7 @@ const contactSchema = new Schema({
     type: String,
     default: "",
     unique: true
-  },
-  // username: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "User"
-  // }
+  }
 
   
 });
